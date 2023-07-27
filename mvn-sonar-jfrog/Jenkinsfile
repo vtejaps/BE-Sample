@@ -1,18 +1,21 @@
 pipeline 
 {
     agent {
-            node{
+            node {
         label 'ubuntu-PS'
         }
     }
     tools {
       maven 'Maven'
     }
-    stage ('Build') {
+    stages {
+      stage ('Build') {
             steps{
-                script{
+                script {
                     sh "mvn clean install"
                 }
             }
-    }
+     }
+}
+
 }
