@@ -1,0 +1,18 @@
+pipeline 
+{
+    agent {
+            node{
+        label 'ubuntu-PS'
+        }
+    }
+    tools {
+      maven 'mvn'
+    }
+    stage ('Build') {
+            steps{
+                script{
+                    sh "mvn clean install"
+                }
+            }
+    }
+}
