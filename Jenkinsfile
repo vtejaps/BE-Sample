@@ -25,5 +25,30 @@ pipeline {
                 }
             }
         }
+        stage('Artifactory Configuration') {
+            steps {
+                rtUpload (
+                    serverId: 'Artifactory',
+                    spec: '''{
+                        "files": [
+                            {
+                                "pattern": "*.war",
+                                "target": "be-generic-local/"
+                            }
+                        ]
+                    }''',
+                    buildName: '',
+                    buildNumber: '',
+                    project: 'b0369',
+                )
+            }
+        }
+        stage('Publish build info') {
+            steps {
+                rtPublishBuildInfo (
+                    serverId: 'Artifactory'
+                )
+            }
+        }
     }
 }
