@@ -32,7 +32,7 @@ pipeline {
                     spec: '''{
                         "files": [
                             {
-                                "pattern": "*.war",
+                                "pattern": "*.jar",
                                 "target": "be-generic-local/"
                             }
                         ]
