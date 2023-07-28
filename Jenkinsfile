@@ -32,8 +32,8 @@ pipeline {
                     spec: '''{
                         "files": [
                             {
-                                "pattern": "*.jar",
-                                "target": "be-generic-local/"
+                                "pattern": "module-b/target/*.jar",
+                                "target": "be-generic-local"
                             }
                         ]
                     }''',
